@@ -20,6 +20,7 @@ export default function CrearEventoScreen() {
   const [description, setDescription] = useState('');
   const [location, setLocation] = useState('');
   const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState('');
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleSubmit = async () => {
@@ -29,6 +30,7 @@ export default function CrearEventoScreen() {
         description,
         location,
         date: date.toISOString().split('T')[0],
+        time
       });
       router.replace('/eventos');
     } catch (error) {
@@ -68,7 +70,7 @@ export default function CrearEventoScreen() {
         <Text style={styles.label}>Ubicación*</Text>
         <TextInput
           style={styles.input}
-          placeholder="Escribe tu ubicación"
+          placeholder="Escribe la ubicación del evento"
           value={location}
           onChangeText={setLocation}
         />
@@ -77,6 +79,14 @@ export default function CrearEventoScreen() {
         <Pressable style={styles.dateInput} onPress={() => setShowDatePicker(true)}>
           <Text>{date.toISOString().split('T')[0]}</Text>
         </Pressable>
+
+        <Text style={styles.label}>Hora del evento*</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Hora del evento"
+          value={time}
+          onChangeText={setTime}
+        />
 
         {showDatePicker && (
           <DateTimePicker
@@ -89,6 +99,7 @@ export default function CrearEventoScreen() {
             }}
           />
         )}
+
 
         <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
           <Text style={styles.submitButtonText}>Agregar evento</Text>

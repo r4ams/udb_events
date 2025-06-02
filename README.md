@@ -6,6 +6,8 @@
 
 > Creador: Ramón Humberto Ramos Ramirez - RR121769
 
+> Manual de usuario: [Manual](https://udbedu-my.sharepoint.com/:b:/g/personal/rr121769_alumno_udb_edu_sv/ET__bq1w2SdBgTo8_9id284BWlCGOjnep2vPZy-wMkkfEQ?e=kLMGzq)
+
 
 ---
 
