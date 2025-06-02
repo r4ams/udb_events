@@ -2,12 +2,11 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import {
   Image,
-  Pressable,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 import Toast from 'react-native-toast-message';
 import { useAuth } from './context/AuthContext';
@@ -78,9 +77,6 @@ export default function LoginScreen() {
           <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
         </TouchableOpacity>
 
-        <Pressable onPress={() => router.push('/recuperar')}>
-          <Text style={styles.forgot}>¿Olvidaste tu contraseña?</Text>
-        </Pressable>
       </View>
     </View>
   );
