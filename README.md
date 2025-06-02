@@ -1,50 +1,125 @@
-# Welcome to your Expo app 👋
+# UDB Events 📆
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**UDB Events** es una aplicación móvil multiplataforma construida con **React Native** + **Expo Router**, diseñada para facilitar la gestión de eventos comunitarios dentro de una institución educativa o comunidad local. Los usuarios pueden explorar eventos, confirmar asistencia, dejar comentarios y más. Los organizadores, por su parte, pueden gestionar y analizar sus eventos de forma sencilla.
 
-## Get started
+> Este frontend consume el backend disponible en: [`proyecto_udb`](https://github.com/r4ams/proyecto_udb)
 
-1. Install dependencies
+> Creador: Ramón Humberto Ramos Ramirez - RR121769
+
+
+---
+
+## 📱 Características principales
+
+- 🔐 **Autenticación** con email y contraseña  
+- 👤 Roles: `organizador` y `usuario`  
+- 📅 Creación, edición y visualización de eventos  
+- 🔔 Confirmación de asistencia y notificaciones  
+- 💬 Comentarios y calificación de eventos  
+- 📊 Registro de eventos pasados y estadísticas  
+- 🖼️ Imágenes de eventos con placeholder dinámico  
+- ☁️ Integración con backend Laravel vía API REST  
+
+---
+
+## 🛠️ Tecnologías usadas
+
+- **Expo** (React Native)  
+- **React Navigation** con `expo-router`  
+- **Axios** para llamadas HTTP  
+- **react-native-toast-message** para notificaciones  
+- **@react-native-community/datetimepicker** para fechas  
+- **SecureStore / localStorage** para persistencia del token  
+- **TypeScript** para tipado estático  
+
+---
+
+## ⚙️ Instalación
+
+1. Clona el proyecto:
+
+   ```bash
+   git clone https://github.com/r4ams/udb_events
+   cd udb_events
+   ```
+
+2. Instala las dependencias:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Instala las dependencias nativas necesarias:
+
+   ```bash
+   npx expo install @react-native-community/datetimepicker
+   npx expo install react-native-toast-message
+   ```
+
+4. Levanta el proyecto:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🧪 Login de prueba
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Rol         | Usuario                  | Contraseña |
+|-------------|---------------------------|------------|
+| Organizador | admin@udb.edu       | admin$123   |
+| Usuario     | demo@demo.com@udb.edu           | admin$123   |
 
-## Get a fresh project
+> ⚠️ Estos usuarios deben existir en el backend Laravel (ver repositorio `udb_events_backend`).
 
-When you're ready, run:
+---
+
+## 🖼️ Diseño Propuesto
+
+> Enlace del diseño propuesto, trabajado en figma:
+https://www.figma.com/design/WTx8DPNZgubTnDt1woZMJ6/APP-Reserva-udb?m=auto&t=GSujUgdO3II6gGJm-6
+
+---
+
+## Actividades en Trello
+
+>Se comparte el link del tablero de trello donde se desarrollaron las actividades trabajadas:
+
+https://trello.com/invite/b/683b94e198a3d652e8ced5d1/ATTI17450f8d604874c8193e4f7985161dd81FAABA11/hus-app-eventos
+
+---
+
+## 📂 Estructura de carpetas
 
 ```bash
-npm run reset-project
+📁 app
+ ┣ 📁 context          # Contexto de autenticación
+ ┣ 📁 eventos          # Pantallas de detalle, creación y edición
+ ┗ 📜 login.tsx        # Pantalla de inicio de sesión
+📁 assets              # Imágenes y recursos locales
+📁 constants           # URL base del API
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🔒 Manejo de autenticación
 
-To learn more about developing your project with Expo, look at the following resources:
+- El contexto `AuthContext` guarda el token, rol y nombre del usuario autenticado.  
+- Se utiliza `expo-secure-store` en móviles y `localStorage` en web.  
+- Los headers de autenticación se agregan automáticamente a las peticiones protegidas.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## ✍️ Autor
 
-Join our community of developers creating universal apps.
+Desarrollado por **R4ams**  
+[GitHub @r4ams](https://github.com/r4ams)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo los términos de la **Licencia Pública General GNU v3.0 (GPL-3.0)**.  
+Para más información, consultá el archivo `LICENSE` o visitá:  
+[https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)
