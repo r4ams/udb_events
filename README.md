@@ -70,8 +70,8 @@
 
 | Rol         | Usuario                  | Contraseña |
 |-------------|---------------------------|------------|
-| Organizador | admin@udb.edu       | admin$123   |
-| Usuario     | demo@demo.com@udb.edu           | admin$123   |
+| Organizador | admin@udb.com       | admin$123   |
+| Usuario     | demo@demo.com          | admin$123   |
 
 > ⚠️ Estos usuarios deben existir en el backend Laravel (ver repositorio `udb_events_backend`).
 
