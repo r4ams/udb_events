@@ -22,13 +22,14 @@ export default function LoginScreen() {
   const handleLogin = async () => {
     const success = await login(email, password);
     if (success) {
+      Toast.show({
+        type: 'success',
+        text1: 'Inicio de sesión exitoso',
+        text2: 'Bienvenido de nuevo',
+      });
       setTimeout(() => {
+        console.log(success);
         router.replace('/eventos');
-        Toast.show({
-          type: 'success',
-          text1: 'Inicio de sesión exitoso',
-          text2: 'Bienvenido de nuevo',
-        });
       }, 100);
     } else {
       Toast.show({
